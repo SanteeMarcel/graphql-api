@@ -26,12 +26,18 @@ export class CompaniesService {
 
   update(id: number, updateCompanyInput: CreateCompanyInput): Company {
     const company = this.findOne(id);
+    if (!company) {
+      return null;
+    }
     Object.assign(company, updateCompanyInput);
     return company;
   }
 
   remove(id: number): Company {
     const company = this.findOne(id);
+    if (!company) {
+      return null;
+    }
     this.companies.splice(this.companies.indexOf(company), 1);
     return company;
   }
