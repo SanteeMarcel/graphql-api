@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Company {
+  """Company ID"""
+  id: Int!
+
+  """Company name"""
+  name: String!
+
+  """Company description"""
+  description: String
+
+  """Company size"""
+  size: String
+}
+
+type Query {
+  hello: String!
+  companies: [Company!]!
+  company(id: Int!): Company!
+}
+
+type Mutation {
+  createCompany(createCompanyInput: CreateCompanyInput!): Company!
+  updateCompany(id: Int!, updateCompanyInput: CreateCompanyInput!): Company!
+  removeCompany(id: Int!): Company!
+}
+
+input CreateCompanyInput {
+  name: String!
+  description: String
+  size: String
+}
